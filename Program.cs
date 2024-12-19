@@ -1,297 +1,322 @@
-﻿using System;
-using System.ComponentModel;
-
-namespace assignment_03
+﻿namespace Demo
 {
-    internal class assignment03
+    internal class Program
     {
-        static void Main(string[] args) // Corrected the method name to "Main"
+        static void Main(string[] args)
         {
-            #region ex01
-            // Write a program that takes a number from the user then print yes if that number can be divided by 3 and 4 otherwise print no.
 
-            int number = 0;
-            if (number % 3 == 0 && number % 4 == 0)
-            {
-                Console.WriteLine("Yes");
-            }
-            else
-            {
-                Console.WriteLine("No");
-            }
+
+            #region Casting 
+            #region Implicit And Explicit Casting
+
+            #region Example 01
+            //int X = 10000; // 4 Bytes 
+            //long Y = X; // 8 Bytes - Implicit Casting 
+            //Console.WriteLine(Y); // 10000
+
+            //long A = 10000;
+            ////int B = A; // Invalid Implicitly 
+            //int B = (int) A; // Explicit Casting Using Casting Operator
+            //Console.WriteLine(B); // 10000
+
+
+            //long C = 100000000000;
+            //int D = (int) C; // Explicit Casting - Unsafe Casting [Might Loss Data] 
+            //Console.WriteLine(D); // 1215752192 due to overflow
+
+            //checked
+            //{
+            //	long E = 100000000000;
+            //	int F = (int)E; // Explicit Casting - Unsafe Casting [Might Loss Data] 
+            //	unchecked
+            //	{
+            //		Console.WriteLine(F); // System.OverflowException
+            //	}
+            //}
             #endregion
-            #region ex02
-            //Write a program that allows the user to insert an integer then print negative if it is negative number otherwise print positive.
+
+            #region Example 02
+
+            //int X = 10; // 4 bytes
+            //decimal Y = X; // 16 Bytes  [Implicit Casting]
+            //Console.WriteLine(Y); // 10
 
 
-            if (number < 0)
-            {
-                Console.WriteLine("Negative");
-            }
-            else
-            {
-                Console.WriteLine("Positive");
-            }
-            #endregion
-            #region ex03
-            //Write a program that takes 3 integers from the user then prints the max element and the min element.
 
-            Console.Write("Enter the 1st number: ");
-            int num1 = int.Parse(Console.ReadLine());
-
-            Console.Write("Enter the 2nd number: ");
-            int num2 = int.Parse(Console.ReadLine());
-
-            Console.Write("Enter the 3rd number: ");
-            int num3 = int.Parse(Console.ReadLine());
-
-            int max = num1;
-            int min = num1;
-
-            if (num2 > max)
-            {
-                max = num2;
-            }
-            if (num3 > max)
-            {
-                max = num3;
-            }
-
-            // Find the minimum
-            if (num2 < min)
-            {
-                min = num2;
-            }
-            if (num3 < min)
-            {
-                min = num3;
-            }
-            Console.WriteLine("Max Element: " + max);
-            Console.WriteLine("Min Element: " + min);
-            #endregion
-            #region ex04
-            // Write a program that allows the user to insert an integer number then check If a number is even or odd.
-
-
-            Console.Write("Enter an integer: ");
-            int number_ = int.Parse(Console.ReadLine());
-
-            if (number_ % 2 == 0)
-            {
-                Console.WriteLine("Even");
-            }
-            else
-            {
-                Console.WriteLine("Odd");
-            }
-            #endregion
-            #region ex05
-
-            //  Write a program that takes character from the user then if it is a vowel chars (a,e,I,o,u) then print (vowel) otherwise print (consonant).
-
-            Console.Write("Enter a character: ");
-            char character = char.Parse(Console.ReadLine());
-            if (character == 'a' || character == 'e' || character == 'i' || character == 'o' || character == 'u')
-            {
-                Console.WriteLine("Vowel");
-            }
-            else
-            {
-                Console.WriteLine("Consonant");
-            }
-            #endregion
-            #region ex07
-            // Write a program that allows the user to insert an integer then 
-            // print a multiplication table up to 12.
-
-                        // i did it super static which is not so practical so i searched for a way to use loop for better answer 
-
-                        Console.Write("Enter an integer: ");
-            int numberr = int.Parse(Console.ReadLine());
-
-            Console.WriteLine($"{numberr} x 1 = {numberr * 1}");
-            Console.WriteLine($"{numberr} x 2 = {numberr * 2}");
-            Console.WriteLine($"{numberr} x 3 = {numberr * 3}");
-            Console.WriteLine($"{numberr} x 4 = {numberr * 4}");
-            Console.WriteLine($"{numberr} x 5 = {numberr * 5}");
-            Console.WriteLine($"{numberr} x 6 = {numberr * 6}");
-            Console.WriteLine($"{numberr} x 7 = {numberr * 7}");
-            Console.WriteLine($"{numberr} x 8 = {numberr * 8}");
-            Console.WriteLine($"{numberr} x 9 = {numberr * 9}");
-            Console.WriteLine($"{numberr} x 10 = {numberr * 10}");
-            Console.WriteLine($"{numberr} x 11 = {numberr * 11}");
-            Console.WriteLine($"{numberr} x 12 = {numberr * 12}");
-
-            // using loop 
-            for(int i = 1; i <= 12; i++)
-            {Console.WriteLine($"{number} x {i} = {number * i}");
-            }
+            //decimal K = 10.100M;
+            //int M = (int)K; // Explicit Casting [May Cause Loss Of Data]
+            //Console.WriteLine(M); // 10
 
             #endregion
-            #region ex09
-
-            //9- Write a program that takes two integers then prints the power.
-
-            Console.Write("Enter two integers: ");
-            int first_number = int.Parse(Console.ReadLine());
-            int sec_number = int.Parse(Console.ReadLine());+
-            first_number * int sec_number = int.Parse(Console.ReadLine());
-            // dont know how think about it 
-            #endregion
-            #region ex10
-            // 10- Write a program to enter marks of five subjects and calculate total, average and percentage.
-
-            int marks1, marks2, marks3, marks4, marks5;
-
-            Console.WriteLine("Enter Marks of five subjects:");
-
-            Console.Write("Subject 1: ");
-            marks1 = int.Parse(Console.ReadLine());
-
-            Console.Write("Subject 2: ");
-            marks2 = int.Parse(Console.ReadLine());
-
-            Console.Write("Subject 3: ");
-            marks3 = int.Parse(Console.ReadLine());
-
-            Console.Write("Subject 4: ");
-            marks4 = int.Parse(Console.ReadLine());
-
-            Console.Write("Subject 5: ");
-            marks5 = int.Parse(Console.ReadLine());
-
-            int totalMarks = marks1 + marks2 + marks3 + marks4 + marks5;
-            int averageMarks = totalMarks / 5;
-            int percentage = totalMarks / 5;
-
-            Console.WriteLine("Total marks = " + totalMarks);
-            Console.WriteLine("Average Marks = " + averageMarks);
-            Console.WriteLine("Percentage = " + percentage);
-            #endregion
-            #region ex11
-            // 11- Write a program to input the month number and print the number of days in that month.
-
-            Console.Write("Enter Month Number : ");
-            int monthNumber = int.Parse(Console.ReadLine());
-
-            if (monthNumber == 1 || monthNumber == 3 || monthNumber == 5 || monthNumber == 7 ||monthNumber == 8 || monthNumber == 10 || monthNumber == 12)
-            {
-                Console.WriteLine("Days in Month: 31");
-            }
-            else if (monthNumber == 4 || monthNumber == 6 || monthNumber == 9 || monthNumber == 11)
-            {
-                Console.WriteLine("Days in Month: 30");
-            }
-            else if (monthNumber == 2)
-            {
-                Console.WriteLine("Days in Month: 28");
-            }
-            else
-            {
-                Console.WriteLine("Invalid Month Number!");
-            }
-            #endregion
-            #region ex17
-            //17- Create a program that asks the user to input three points (x1, y1), (x2, y2), and (x3, y3), and determines whether these points lie on a single straight line.
-
-
-
-            double x1, y1, x2, y2, x3, y3;
-
-            Console.WriteLine("Enter coordinates of three points:");
-
-            Console.Write("Enter x1: ");
-            x1 = double.Parse(Console.ReadLine());
-
-            Console.Write("Enter y1: ");
-            y1 = double.Parse(Console.ReadLine());
-
-            Console.Write("Enter x2: ");
-            x2 = double.Parse(Console.ReadLine());
-
-            Console.Write("Enter y2: ");
-            y2 = double.Parse(Console.ReadLine());
-
-            Console.Write("Enter x3: ");
-            x3 = double.Parse(Console.ReadLine());
-
-            Console.Write("Enter y3: ");
-            y3 = double.Parse(Console.ReadLine());
-
-
-            //idk how to check whether these points lie on a single straight line. but we will use if for sure
-
-
 
             #endregion
-            #region ex18
 
-            // Within a company, the efficiency of workers is evaluated based on the duration required to complete a specific task.
-            // A worker's efficiency level is determined as follows: 
+            #region Parse()
+            //Console.WriteLine("Please Enter Your Data");
 
-            Console.Write("Enter time taken to complete the task: ");
-            double time = double.Parse(Console.ReadLine());
+            //Console.Write("Name : ");
+            //string? Name = Console.ReadLine();
 
-            if (time >= 2 && time < 3)
-            {
-                Console.WriteLine("Highly Efficient");
-            }
-            else if (time >= 3 && time < 4)
-            {
-                Console.WriteLine("Increase Speed");
-            }
-            else if (time >= 4 && time < 5)
-            {
-                Console.WriteLine("Provide Training");
-            }
-            else if (time >= 5)
-            {
-                Console.WriteLine("Leave Company");
-            }
-            #endregion
-            #region ex21
-            //Write C# program that Assigning one value type variable to another and modifying the value of one variable and mention what will happen
+            //Console.Write("Age : ");
+            //int Age = int.Parse(Console.ReadLine() ?? "0");
 
-            int a = 10;
-            int b = a;  
+            //Console.Write("Salary : ");
+            //decimal Salary = decimal.Parse(Console.ReadLine() ?? "0");
 
-            b = 20;  
-
-            Console.WriteLine("Value of a: " + a);  // Prints 10
-            Console.WriteLine("Value of b: " + b);  // Prints 20
+            //Console.Clear();
+            //Console.WriteLine("Name is " + Name + " Age is " + Age + " Salary is " + Salary);
 
             #endregion
-            #region ex22
-            //Write C# program that Assigning one reference type variable to another and modifying the object through one variable and mention what will happen
-            int numbers1 = [1, 2, 3] ;
-            int numbers2 = numbers1;  
 
-            numbers2 = 100;  
 
-            Console.WriteLine("First element of numbers1: " + numbers1);  // Prints 100
-            Console.WriteLine("First element of numbers2: " + numbers2);  // Prints 100
-                                                                          // Changes both arrays
+            #region Convert 
+
+            //Console.WriteLine("Please Enter Your Data");
+            //Console.Write("Name : ");
+            //string? Name =  Console.ReadLine();
+
+            //Console.Write("Age : ");
+            //int Age = Convert.ToInt32(Console.ReadLine());
+
+            //Console.Write("Salary : ");
+            //decimal Salary = Convert.ToDecimal(Console.ReadLine());
+
+            //Console.Clear();
+            // Console.WriteLine("Name is " + Name + " Age is " + Age + " Salary is " + Salary);
 
             #endregion
-            #region ex23
-            //Which of the following statements is correct about the C#.NET code snippet given below?
-            int d = Convert.ToInt32(!(30 < 20));
-            //  true converts to 1 so 
-            // b) A value 1 will be assigned to d.
+            #endregion
+
+            #region Operators 
+
+            #region Unary Operators [ ++ , -- ]
+            //int X = 10;
+
+            ////1. ++
+            //// 1.1 PreFix [Increment and Then Print]
+            //Console.WriteLine(++X); // 11
+            //Console.WriteLine(X); // 11
+
+            //// 1.2 PostFix [Print and Then Increment]
+            //Console.WriteLine(X++); // 10 
+            //Console.WriteLine(X); // 11
+
+
+            ////2. --
+            //// 2.1 PreFix [Decrement and Then Print]
+            //Console.WriteLine(--X); // 9
+            //Console.WriteLine(X); // 9
+
+            //// 2.2 PostFix [Print and Then Decrement]
+            //Console.WriteLine(X--); // 10 
+            //Console.WriteLine(X); // 9
+            #endregion
+
+            #region Binary | Arithmetic Operators [+ , - , * , / , %]
+
+            //int sumResult, subResult, mulResult, divResult, modResult;
+            //int number01 = 6, number02 = 2;
+            //sumResult = number01 + number02; // 8 
+            //subResult = number01 - number02; // 4
+            //mulResult = number01 * number02; // 12
+            //divResult = number01 / number02; // 3
+            //modResult = number01 % number02; // 0
+
+            #endregion
+
+            #region Assignment Operators [= , += , -= , *= , /= , %=]
+
+            //int X;
+            //X = 4;
+            //X += 2; // X = X + 2
+            //X -= 2; // X = X - 2
+            //X *= 2; // X = X * 2
+            //X /= 2; // X = X / 2
+            //X %= 2; // X = X % 2
+
+            #endregion
+
+            #region Relational | Comparsion Operators [== , != , < , > , <=, >=]
+            //int X = 10, Y = 10;
+
+            //Console.WriteLine(X == Y); // True
+            //Console.WriteLine(X != Y); // False 
+            //Console.WriteLine(X > Y); // False 
+            //Console.WriteLine(X < Y); // False
+            //Console.WriteLine(X >= Y); // True 
+            //Console.WriteLine(X <= Y); // True
+
+            #endregion
+
+            #region Logical Operators [! , && , ||]
+            //// Short Circuit
+            //Console.WriteLine(!true); // False
+            //Console.WriteLine(false && true); // False
+            //Console.WriteLine(false || true); // True 
+
+            #endregion
+
+            #region BitWise Operator [& , | , ^ , ~ , << , >> ]
+            //// Long Circuit
+            //Console.WriteLine(false & true); // False
+            //Console.WriteLine(true | false); // True 
+            //Console.WriteLine(false ^ true); // True 
+            #endregion
+
+            #region Terany Operator [Conditional Operator] [?:]
+
+            //int X = 10, Y = 5;
+
+            //string Message = X > Y ? "X > Y" : "X < Y";
+
+            //Console.WriteLine(Message);
+            #endregion
+
+            #region Operators Priority and Associativity
+            // unary
+            //()
+            //* % /
+            // + _
+
+            #endregion
+            #endregion
+
+            #region String Formatting 
+            //// Equation : 10 + 5 = 15
+            //int X = 10, Y = 5 , result;
+            //result = X + Y;
+            //string message;
+            //// 1. String Interpolation
+            //message = $"Equation : {X} + {Y} = {result}";
+            //Console.WriteLine(message);
+
+            //// 2. String.Format Method
+            //message = string.Format("Equation : {0} + {1} = {2}" , X , Y ,result);
+            //Console.WriteLine(message);
+
+            //// 3. Composite Formatting
+            //Console.WriteLine("Equation :x {0} + {1} = {2}" , X , Y , result);
+
+            //// 4. String Concatenation
+            //message =  "Equation : " + X + " + " + Y + " = " + result;
+            //Console.WriteLine(message);
+
+
+            //// File Path 
+            //// D:\Cycle 43 .Net\Group 06\C#\Session 03\Day03 Solution\Demo\Demo.csproj
+
+            //string filePath = "D:\\Cycle 43 .Net\\Group 06\\C#\\Session 03\\Day03 Solution\\Demo\\Demo.csproj";
+            //filePath = @"D:\Cycle 43 .Net\Group 06\C#\Session 03\Day03 Solution\Demo\Demo.csproj";
+            //Console.WriteLine(filePath);
+
+            //Console.WriteLine("Aliaa\tTarek\nBackend Instructor");
+            ////Aliaa   Tarek
+            ////Backend Instructor
+            #endregion
+
+            #region Control Statements 
+            #region 1. Conditional Statements
+
+            #region Example 01 [Year Quarter] - [If,Switch With Numeric type using Constant Pattern]
+            //Console.Write("Please Enter A Month Number  : ");
+
+            //int monthNumber =int.Parse(Console.ReadLine());
+
+            #region if else
+            //if (monthNumber == 1)
+            //	Console.WriteLine("Hello January");
+            //else if (monthNumber == 2)
+            //	Console.WriteLine("Hello February");
+            //else if (monthNumber == 3)
+            //	Console.WriteLine("Hello March");
+            //else
+            //	Console.WriteLine("invaild"); 
+            #endregion
+
+            #region switch 
+
+            //switch (monthNumber)
+            //{
+            //	case 1:
+            //		Console.WriteLine("Hello Jan");
+            //		break;
+            //	case 2:
+            //		Console.WriteLine("Hello Feb");
+            //		break;
+            //	case 3:
+            //		Console.WriteLine("Hello March");
+            //		break;
+            //	default:
+            //		Console.WriteLine("invaild");
+            //		break;
+            //}
+            #endregion
+
+            //Console.ReadKey();
+            #endregion
 
 
             #endregion
-            #region ex24
-            // Which of the following is the correct output for the C# code given below?
-            // d) 6 1         the answer 
 
+            #region Example 03 [Student Name] - [If,Switch With String type]
+            /// name = Omar => Hello Omar 
+            /// name = May => Hello May 
+            /// name = Aliaa => Hello Aliaa 
+
+            //Console.Write("Enter Student Name : ");
+            //string name = Console.ReadLine() ?? "No Name Entered";
+
+            #region if else 
+            //if(name == "Omar")
+            //	Console.WriteLine("Hello Omar");
+            //else if(name == "May")
+            //	Console.WriteLine("Hello May");
+            //else if(name == "Aliaa")
+            //	Console.WriteLine("Hello Aliaa");
+            #endregion
+            #region switch 
+            //// No Jump Table Will Be Created
+            //// Compiler will generate a sequence of string comparisons
+            //switch (name)
+            //{
+            //	case "Omar":
+            //		Console.WriteLine("Hello Omar");
+            //		break;
+            //	case "May":
+            //		Console.WriteLine("Hello May");
+            //		break;
+            //	case "Aliaa":
+            //		Console.WriteLine("Hello Aliaa");
+            //		break;
+            //}
+            #endregion
+            #endregion
+
+            #region Example 04 [Budget] - [Switch With Goto]
+            /// Budget is 1000 => Option 01
+            /// Budget is 2000 => Option 01 , Option 02
+            /// Budget is 3000 => Option 01 , Option 02 , Option 03
+
+            //Console.Write("Please Enter Your Budget : ");
+            //int.TryParse(Console.ReadLine(), out int Budget);
+
+            //switch(Budget)
+            //{
+            //	case 1000:
+            //		Console.WriteLine("Option 01");
+            //		break;
+            //	case 2000:
+            //		Console.WriteLine("Option 02");
+            //		goto case 1000;
+            //	case 3000:
+            //		Console.WriteLine("Option 03");
+            //		goto case 2000;
+            //}
 
             #endregion
-            #region ex25
-            // What will be the output of the C# code given below?
 
-            // Prints: 7 7    the answer is       d)  7 7 
             #endregion
+
         }
     }
 }
